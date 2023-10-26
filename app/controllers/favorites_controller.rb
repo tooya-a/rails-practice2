@@ -1,8 +1,8 @@
 class FavoritesController < ApplicationController
 
-  def index
-    @favorites = current_user.favorites
-  end
+  # def index
+  #   @favorites = current_user.favorites
+  # end
 
   def create
     favorite = current_user.favorites.create(blog_id: params[:blog_id])
