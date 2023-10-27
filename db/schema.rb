@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2023_10_26_055747) do
+ActiveRecord::Schema[7.0].define(version: 2023_10_27_050624) do
   create_table "blogs", charset: "utf8mb4", collation: "utf8mb4_0900_ai_ci", force: :cascade do |t|
     t.string "title"
     t.text "content"
@@ -20,14 +20,6 @@ ActiveRecord::Schema[7.0].define(version: 2023_10_26_055747) do
     t.index ["user_id"], name: "index_blogs_on_user_id"
   end
 
-  create_table "boards", charset: "utf8mb4", collation: "utf8mb4_0900_ai_ci", force: :cascade do |t|
-    t.string "author_name"
-    t.string "title"
-    t.text "body"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
   create_table "favorites", charset: "utf8mb4", collation: "utf8mb4_0900_ai_ci", force: :cascade do |t|
     t.bigint "user_id", null: false
     t.bigint "blog_id", null: false
@@ -35,6 +27,18 @@ ActiveRecord::Schema[7.0].define(version: 2023_10_26_055747) do
     t.datetime "updated_at", null: false
     t.index ["blog_id"], name: "index_favorites_on_blog_id"
     t.index ["user_id"], name: "index_favorites_on_user_id"
+  end
+
+  create_table "feeds", charset: "utf8mb4", collation: "utf8mb4_0900_ai_ci", force: :cascade do |t|
+    t.text "image"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "pics", charset: "utf8mb4", collation: "utf8mb4_0900_ai_ci", force: :cascade do |t|
+    t.text "image"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "users", charset: "utf8mb4", collation: "utf8mb4_0900_ai_ci", force: :cascade do |t|
