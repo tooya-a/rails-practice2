@@ -1,6 +1,10 @@
 <p style="color: green"><%= notice %></p>
 
 <%= render @feed %>
+<p>
+  <strong>Image:</strong>
+  <%= image_tag @feed.image.url %>
+</p>
 
 <div>
   <%= link_to "Edit this feed", edit_feed_path(@feed) %> |

@@ -1,6 +1,9 @@
 <p style="color: green"><%= notice %></p>
 
-<%= render @pic %>
+<p>
+<strong>Image:</strong>
+<%= image_tag @pic.image.url %>
+</p>
 
 <div>
   <%= link_to "Edit this pic", edit_pic_path(@pic) %> |
