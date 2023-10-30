@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :contacts
   resources :pics
   resources :feeds
   get 'sessions/new'
